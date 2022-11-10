@@ -1,0 +1,9 @@
+POST http://localhost:1789/app/register
+Content-Type: application/json
+
+{
+    "practitionerId":"25259725",
+    "naMe":"Botho",
+    "surName":"Big Tswe",
+    " jobDescription":" sex worker"
+}

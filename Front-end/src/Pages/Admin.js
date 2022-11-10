@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './page.css';
+import { apiPostCall } from '../Utility';
 const Admin = () => {
   const [AdMin, setAdmin] = useState({
     adminId: " ",
@@ -10,11 +11,20 @@ const Admin = () => {
     data[e.target.name] = e.target.value;
     setAdmin(data)
   }
-  const Show = () => {
-    console.log("admin", AdMin)
-  }
   const handleSubmit = (e) => {
     e.preventDefault();
+  }
+
+  const Show = async () => {
+    try {
+      let results = await apiPostCall('http://localhost:1789/api/admin', AdMin);
+
+      console.log('Results : ' + results);
+    }
+    catch (error) {
+      console.log(error);
+    }
+    console.log("results", AdMin);
   }
   return (
     <div className='pipo'>

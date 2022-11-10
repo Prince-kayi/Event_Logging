@@ -1,0 +1,143 @@
+.type-wrap {
+  position: relative;
+  background-color: rgb(84, 90, 90);
+  height: 70vh;
+  width: 760px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 100px;
+}
+.nosis {
+  height: 100vh;
+  width: 97%;
+  background-image: url(../Lab.jpg);
+  background-size: cover;
+  background-position: center;
+  margin-left: 20px;
+}
+.treat-wrap {
+  position: relative;
+  background-color: rgb(84, 90, 90);
+  height: 70vh;
+  width: 760px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 100px;
+}
+.four,
+.five,
+.six {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  margin-left: 90px;
+}
+.four a,
+.five a,
+.six a {
+  text-decoration: none;
+  color: darkblue;
+  cursor: pointer;
+}
+.fives,
+.sixs {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  margin-left: 170px;
+  cursor: pointer;
+}
+.fives a,
+.sixs a {
+  text-decoration: none;
+  color: darkblue;
+  cursor: pointer;
+}
+.res-in label {
+  width: 250px;
+  text-align: right;
+}
+.ress-in label {
+  width: 300px;
+  text-align: right;
+}
+.is {
+  height: 100vh;
+  width: 97%;
+  background-image: url(../operating.jpg);
+  background-size: cover;
+  background-position: center;
+  margin-left: 20px;
+}
+.iss {
+  height: 100vh;
+  width: 97%;
+  background-image: url(../clinc.jpg);
+  background-size: cover;
+  background-position: center;
+  margin-left: 20px;
+}
+.res-in input {
+  padding: 6px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  margin-left: 5px;
+}
+.ress-in input {
+  padding: 6px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  margin-left: 5px;
+}
+.sign-btn {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  margin-left: 300px;
+}
+.sign-btn a {
+  text-decoration: none;
+  color: blue;
+}
+.homes {
+  height: 100vh;
+  width: 97%;
+  background-image: url(../entrs.webp);
+  background-size: cover;
+  background-position: center;
+  margin-left: 20px;
+}
+.hi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hi h1 {
+  margin-top: 250px;
+  font-size: 6rem;
+  color: red;
+}
+@media screen and (max-width:820px) {
+  .sign-btn {
+    width: 370px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    background-color: transparent;
+  }
+  .sign-btn:hover {
+    cursor: pointer;
+    background: crimson;
+  }
+
+}

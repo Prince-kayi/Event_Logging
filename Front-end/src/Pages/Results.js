@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import '../Header.css'
+import { apiPostCall } from '../Utility';
+import './page.css';
 const Results = () => {
   const [resData, setRes] = useState({
     option: " "
@@ -10,8 +11,15 @@ const Results = () => {
     answer[e.target.name] = e.target.value;
     setRes(answer)
   }
-  const display = () => {
-    console.log("results", resData.option)
+  const display = async () => {
+    try {
+      let results = await apiPostCall('/results', resData);
+      console.log('Results : ' + results);
+    }
+    catch (error) {
+      console.log(error);
+    }
+    console.log("results", resData);
   }
   return (
     <div className='ults'>
@@ -55,9 +63,9 @@ const Results = () => {
             </label>
           </div>
           <div className='addmit'>
-            <button className='four' onClick={display}><Link to="/admit">Admit</Link></button>
-            <button className='five'><Link to="/admin">LogOut</Link></button>
-            <button className='six'><Link to="/treat" onClick={display}>Treatment</Link></button>
+            <button className='fours' onClick={display}><Link to="/admit">Admit</Link></button>
+            <button className='fives'><Link to="/admin">LogOut</Link></button>
+            <button className='sixs'><Link to="/treat" onClick={display}>Treatment</Link></button>
           </div>
         </form>
       </div>

@@ -173,9 +173,10 @@ label {
 }
 @media screen and (max-width:820px) {
   .login-wrap {
-    height: 53vh;
+    height: 60vh;
     width: 400px;
     display: flex;
+    margin-left: 10px;
   }
   .log-in input {
     width: 380px;
@@ -202,7 +203,30 @@ label {
   .sing-in label {
     width: 100%;
     text-align: left;
-    padding-left: 35px;
+    padding-left: 35px;  
+}
+.register-wrap{
+    height: 84vh;
+    width: 400px;
+    display: flex;  
+}
+.reg-in input {
+    width: 380px;
+    height: 40px;
+    margin-left: 30px;
+    margin-top: -30px;
   }
-
+  .reg-in label {
+    width: 100%;
+    text-align: left;
+    padding-left: 35px;
+    margin-bottom: 10px;
+  }
+.acce{
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+.login,.sign {
+  margin-left: 75px;
+}
 }

@@ -1,16 +1,21 @@
 const express = require("express");
-const Events = require("../Models/Events")
-
+const Pratitioner = require("../Models/Practitioner");
+const Adminision = require("../Models/Adminisions");
+const Result = require("../Models/Result");
+const Treatment = require("../Models/Treatment");
+const Diagonsi = require("../Models/Diagonsi");
+const Patient = require("../Models/Patient");
+const Administration = require("../Models/Administration");
 const router = express.Router();
 
 router.post("/register", (req, res) => {
-   const SignedUpUser = new Events({
+   const practitioner = new Pratitioner({
       practitionerId: req.body.practitionerId,
       name: req.body.name,
       surname: req.body.surname,
-      jobDescription: req.body.jobDescription
+      jobDescription:req.body.jobDescription
    });
-   SignedUpUser.save()
+   practitioner.save()
       .then(data => {
          res.json(data)
       })
@@ -20,10 +25,25 @@ router.post("/register", (req, res) => {
       )
 });
 router.post("/admin", (req, res) => {
-   const AdminUser = new Events({
-     adminId:req.body.adminId
+   const administration = new Administration({
+      Id: req.body.Id
    });
-   AdminUser.save()
+   console.log(req.body.id);
+   administration.save()
+      .then(data => {
+         res.json(data)
+      })
+      .catch(error => {
+         res.json(error)
+      }
+      )
+});
+router.post("/results", (req, res) => {
+   const result = new Result({
+      option: req.body.option
+   });
+   console.log(req.body.id);
+   result.save()
       .then(data => {
          res.json(data)
       })
@@ -33,11 +53,11 @@ router.post("/admin", (req, res) => {
       )
 });
 router.post("/admit", (req, res) => {
-   const AdmitUser = new Events({
+   const adminision = new Adminision({
       ward: req.body.ward,
       admission: req.body.admission
    });
-   AdmitUser.save()
+   adminision.save()
       .then(data => {
          res.json(data)
       })
@@ -46,7 +66,46 @@ router.post("/admit", (req, res) => {
       }
       )
 });
-router.get('/events', async (req, res) => {
+router.post("/treat", (req, res) => {
+   const treatment = new Treatment({
+      option: req.body.option
+   });
+   treatment.save()
+      .then(data => {
+         res.json(data)
+      })
+      .catch(error => {
+         res.json(error)
+      }
+      )
+});
+router.post("/type", (req, res) => {
+   const diagonsi = new Diagonsi({
+      option: req.body.option
+   });
+   diagonsi.save()
+      .then(data => {
+         res.json(data)
+      })
+      .catch(error => {
+         res.json(error)
+      }
+      )
+});router.post("/login", (req, res) => {
+   const patient = new Patient({
+      patientId: req.body.patientId,
+      vitalReadings: req.body.vitalReadings
+   });
+   patient.save()
+      .then(data => {
+         res.json(data)
+      })
+      .catch(error => {
+         res.json(error)
+      }
+      )
+});
+router.get('/list', async (req, res) => {
    let results = await Events.find({});
    res.status(200).send(results);
 });

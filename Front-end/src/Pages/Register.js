@@ -18,8 +18,7 @@ const Register = () => {
   }
   const getResults = async () => {
     try {
-      let results = await apiPostCall('http://localhost:1789/api/register', registers);
-
+      let results = await apiPostCall('/register', registers);
       console.log('Results : ' + results);
     }
     catch (error) {

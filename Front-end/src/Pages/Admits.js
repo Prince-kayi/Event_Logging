@@ -18,7 +18,7 @@ const [admis,setAdmi]=useState({
    }
    const Store=async()=>{
     try {
-      let results = await apiPostCall('http://localhost:1789/api/admit', admis);
+      let results = await apiPostCall('/admit', admis);
 
       console.log('Results : ' + results);
     }
@@ -64,8 +64,8 @@ const [admis,setAdmi]=useState({
           /> 
         </div>
         <div className='acces'>
-        <button className='fives' onClick={Store}><Link>store</Link></button>
-          <button className='sixs'><Link to="/admin">LogOut</Link></button>
+        <button className='fives' onClick={Store}><Link>Store</Link></button>
+          <button className='six'><Link to="/admin">LogOut</Link></button>
         </div>
       </form>
       

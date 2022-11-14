@@ -1,23 +1,31 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { apiPostCall } from '../Utility';
 import './page.css';
-import axios from "axios"
 const Login = () => {
   const [Login, setLogin] = useState({
-    patient_Id: "",
-    vital_Readings: " "
+    patientId: "",
+    vitalReadings: " "
   })
   const handleChange = (e) => {
     const Data = { ...Login }
     Data[e.target.name] = e.target.value;
     setLogin(Data)
   }
-  const Outcome = () => {
-    console.log("Patients Details", Login)
-  }
   const handleSubmit = (e) => {
     e.preventDefault();
   }
+  const Outcome = async () => {
+  try {
+    let results = await apiPostCall('/login', Login);
+    console.log('Results : ' + results);
+  }
+  catch (error) {
+    console.log(error);
+  }
+  console.log("results", Login);
+}
+  
   return (
     <div className='iss'>
       <div className='login-wrap'>
@@ -26,9 +34,9 @@ const Login = () => {
           <div className='log-in'>
             <label> Patients ID:</label>
             <input type="text"
-              name='patient_Id'
+              name='patientId'
               autoComplete='off'
-              value={Login.patient_Id}
+              value={Login.patientId}
               onChange={handleChange}
               placeholder='Enter Patients Id'
             />
@@ -36,16 +44,16 @@ const Login = () => {
           <div className='log-in'>
             <label>Vital Readings: </label>
             <input type="text"
-              name='vital_Readings'
+              name='vitalReadings'
               autoComplete='off'
-              value={Login.vital_Readings}
+              value={Login.vitalReadings}
               onChange={handleChange}
               placeholder="Enter_Vital_Readings"
             />
           </div>
           <div className='acces'>
             <button className='fives'><Link to="/type" onClick={Outcome}>Diagonsis</Link></button>
-            <button className='sixs'><Link to="/treat" onClick={Outcome}>Treatment</Link></button>
+            <button className='six'><Link to="/treat" onClick={Outcome}>Treatment</Link></button>
           </div>
         </form>
       </div>

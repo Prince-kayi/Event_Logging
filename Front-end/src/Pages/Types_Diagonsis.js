@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './page.css';
+import { apiPostCall } from '../Utility';
 const Types_Diagonsis = () => {
   const [resData, setRes] = useState({
     option: " "
@@ -10,8 +11,15 @@ const Types_Diagonsis = () => {
     answer[e.target.name] = e.target.value;
     setRes(answer)
   }
-  const display = () => {
-    console.log("results", resData.option)
+  const display = async() => {
+    try {
+      let results = await apiPostCall('/type', resData);
+      console.log('Results : ' + results);
+    }
+    catch (error) {
+      console.log(error);
+    }
+    console.log("results", resData);
   }
   return (
     <div className='nosis'>
@@ -48,7 +56,7 @@ const Types_Diagonsis = () => {
             </div>
           </div>
           <div className='addmit'>
-            <button className='four'><Link to="/admit">Admit</Link></button>
+            <button className='four'><Link to="/admit" onClick={display}>Admit</Link></button>
             <button className='five'><Link to="/results" onClick={display}>Results</Link></button>
           </div>
         </form>

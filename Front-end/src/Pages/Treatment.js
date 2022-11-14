@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../Header.css'
+import { apiPostCall } from '../Utility';
 const Treatment = () => {
   const [resData, setRes] = useState({
     option: " "
@@ -10,8 +11,15 @@ const Treatment = () => {
     answer[e.target.name] = e.target.value;
     setRes(answer)
   }
-  const display = () => {
-    console.log("results", resData.option)
+  const display = async() => {
+    try {
+      let results = await apiPostCall('/treat', resData);
+      console.log('Results : ' + results);
+    }
+    catch (error) {
+      console.log(error);
+    }
+    console.log("results", resData);
   }
   return (
     <div className='ment'>

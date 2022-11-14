@@ -1,9 +1,0 @@
-POST http://localhost:1789/api/register
-Content-Type: application/json
-
-{
-    "practitionerId":"25259725",
-    "naMe":"Botho",
-    "surName":"Big Tswe",
-    " jobDescription":" ashawo"
-}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { apiPostCall } from '../Utility';
 import '../Header.css'
 const Results = () => {
   const [resData, setRes] = useState({
@@ -10,8 +11,15 @@ const Results = () => {
     answer[e.target.name] = e.target.value;
     setRes(answer)
   }
-  const display = () => {
-    console.log("results", resData.option)
+  const display = async () => {
+    try {
+      let results = await apiPostCall('/results', resData);
+      console.log('Results : ' + results);
+    }
+    catch (error) {
+      console.log(error);
+    }
+    console.log("results", resData);
   }
   return (
     <div className='ults'>

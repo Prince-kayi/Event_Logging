@@ -179,7 +179,36 @@ nav {
         align-items: center;
     }
     .logo {
-        margin-left: 170px;
-        margin-top: 10px;
+        margin-left: 100px;
     }
+    .wlcom-btn{
+        width: 12rem;
+    }
+    .circle {
+        width: 3.5rem;
+        height: 4rem;
+        background: red;
+        margin-left: -370px;
+    }
+    .texts{
+        margin-left: -460px;
+        margin-top: -20px;
+    }
+    .treati-wrap {
+        height: 65vh;
+        width: 430px;
+        display: flex;
+        margin-left: -10px;
+      }
+      .ress-in label {
+        width: 100%;
+        text-align: right;
+        margin-left: -70px;
+      }
+      .five{
+        margin-right: -70px;
+      }
+      .four{
+        margin-right: -70px;
+      }
 }

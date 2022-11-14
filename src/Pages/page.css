@@ -138,6 +138,36 @@
   .sign-btn:hover {
     cursor: pointer;
     background: crimson;
-  }
-
+  } 
+.fives,.sixs {
+  margin-left: 70px;
+}
+.treat-wrap {
+  height: 65vh;
+  width: 400px;
+  display: flex;
+  margin-left: 10px;
+}
+.res-in label {
+  width: 100%;
+  text-align: right;
+  margin-left: -100px;
+}
+.four,.five{
+  margin-left: 60px; 
+}
+.type-wrap {
+  height: 65vh;
+  width: 400px;
+  display: flex;
+  margin-left: 10px;
+}
+.treat-btn label {
+  width: 100%;
+  text-align: right;
+  margin-left: -100px;
+}
+.four,.five{
+  margin-left: 80px; 
+}
 }

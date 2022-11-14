@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import axios from "axios"
+import { apiPostCall } from '../Utility';
 const Register = () => {
   const [registers, setRegisters] = useState({
     practitionerId: " ",
-    naMe: " ",
-    surName: " ",
+    name: " ",
+    surname: " ",
     jobDescription: " "
   })
   const handle = (e) => {
@@ -16,8 +16,15 @@ const Register = () => {
   const Submitted = (e) => {
     e.preventDefault();
   }
-  const getResults = () => {
-    console.log("results", registers)
+  const getResults = async () => {
+    try {
+      let results = await apiPostCall('/register', registers);
+      console.log('Results : ' + results);
+    }
+    catch (error) {
+      console.log(error);
+    }
+    console.log("results", registers);
   }
   return (
     <div className='star'>
@@ -36,8 +43,8 @@ const Register = () => {
           <div className='reg-in'>
             <label>Name:</label>
             <input type="text"
-              name='naMe'
-              value={registers.naMe}
+              name='name'
+              value={registers.name}
               onChange={handle}
               placeholder='Enter Name'
             />
@@ -45,8 +52,8 @@ const Register = () => {
           <div className='reg-in'>
             <label>Surname:  </label>
             <input type="text"
-              name='surName'
-              value={registers.surName}
+              name='surname'
+              value={registers.surname}
               onChange={handle}
               placeholder='Enter Surname'
             />

@@ -1,20 +1,30 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './page.css';
+import { apiPostCall } from '../Utility';
 const Admin = () => {
-  const [AdMin, setAdmin] = useState({
-    adminId: " ",
+  const [admin, setAdmin] = useState({
+    Id:"",
   })
   const HandlerChange = (e) => {
-    const data = { ...AdMin };
+    const data = { ...admin };
     data[e.target.name] = e.target.value;
     setAdmin(data)
   }
-  const Show = () => {
-    console.log("admin", AdMin)
-  }
   const handleSubmit = (e) => {
     e.preventDefault();
+  }
+
+  const Show = async () => {
+    try {
+      let results = await apiPostCall('/admin', admin);
+
+      console.log('Results : ' + results);
+    }
+    catch (error) {
+      console.log(error);
+    }
+    console.log("results", admin);
   }
   return (
     <div className='pipo'>
@@ -24,9 +34,9 @@ const Admin = () => {
             <h1 className='id'>Admin ID</h1>
             <div className='sing-in'>
               <input type="text"
-                name='adminId'
+                name='Id'
                 placeholder='enter Admin Id'
-                value={AdMin.adminId}
+                value={admin.Id}
                 onChange={HandlerChange}
               />
             </div>

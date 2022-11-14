@@ -1,6 +1,6 @@
 import React,{useState} from "react"
 import { Link } from 'react-router-dom'
-
+import { apiPostCall } from '../Utility';
 const Admits = () => {
 const [admis,setAdmi]=useState({
     ward:" ",
@@ -14,12 +14,20 @@ const [admis,setAdmi]=useState({
    }
    const handleSubmits=(e)=>{
     e.preventDefault();
-    setAdmi("");
     setSuccess(true)
    }
-   const Store=()=>{
-    console.log("Reasons",admis)
-   }
+   const Store=async()=>{
+    try {
+      let results = await apiPostCall('/admit', admis);
+
+      console.log('Results : ' + results);
+    }
+    catch (error) {
+      console.log(error);
+    }
+    console.log("results", admis);
+}
+
   return (
     <>
     {success ?(

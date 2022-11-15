@@ -53,7 +53,7 @@ const Login = () => {
           </div>
           <div className='acces'>
             <button className='fives'><Link to="/type" onClick={Outcome}>Diagonsis</Link></button>
-            <button className='sixs'><Link to="/treat" onClick={Outcome}>Treatment</Link></button>
+            <button className='six'><Link to="/treat" onClick={Outcome}>Treatment</Link></button>
           </div>
         </form>
       </div>

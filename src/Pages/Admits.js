@@ -64,8 +64,8 @@ const [admis,setAdmi]=useState({
           /> 
         </div>
         <div className='acces'>
-        <button className='fives' onClick={Store}><Link>store</Link></button>
-          <button className='sixs'><Link to="/admin">LogOut</Link></button>
+        <button className='fives' onClick={Store}><Link>Store</Link></button>
+          <button className='six'><Link to="/admin">LogOut</Link></button>
         </div>
       </form>
       

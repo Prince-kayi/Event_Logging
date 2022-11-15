@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { apiPostCall } from '../Utility';
-import '../Header.css'
+import './page.css';
 const Results = () => {
   const [resData, setRes] = useState({
     option: " "
@@ -63,9 +63,9 @@ const Results = () => {
             </label>
           </div>
           <div className='addmit'>
-            <button className='four' onClick={display}><Link to="/admit">Admit</Link></button>
-            <button className='five'><Link to="/admin">LogOut</Link></button>
-            <button className='six'><Link to="/treat" onClick={display}>Treatment</Link></button>
+            <button className='fours' onClick={display}><Link to="/admit">Admit</Link></button>
+            <button className='fives'><Link to="/admin">LogOut</Link></button>
+            <button className='sixs'><Link to="/treat" onClick={display}>Treatment</Link></button>
           </div>
         </form>
       </div>

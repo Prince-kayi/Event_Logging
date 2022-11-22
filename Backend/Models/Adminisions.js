@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
-const admissionSchema = new mongoose.Schema({
+const admissionSchema = new Schema({
   ward: {
     type: String,
   },

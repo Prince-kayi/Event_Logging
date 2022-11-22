@@ -105,9 +105,11 @@ router.post("/type", (req, res) => {
       }
       )
 });
-router.get('/list', async (req, res) => {
-   let results = await Events.find({});
-   res.status(200).send(results);
+router.get('/csv', async (req, res) => {
+   let results = await Pratitioner.find({});
+   res.write("PRACTIONERID, FIRSTNAME, LASTNAME, DATE ");
+   
+   res.end();
 });
 
 module.exports = router;
